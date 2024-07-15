@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.11.9 on win32)" generated="2024-07-11T12:00:38.007497" rpa="false" schemaversion="5">
+<suite id="s1" name="WEB" source="C:\Users\juliano.rocha\Documents\Four\WEB">
+<suite id="s1-s1" name="Tests" source="C:\Users\juliano.rocha\Documents\Four\WEB\tests">
+<suite id="s1-s1-s1" name="Login Test" source="C:\Users\juliano.rocha\Documents\Four\WEB\tests\login_test.robot">
+<test id="s1-s1-s1-t1" name="Login Sistema" line="14">
+<kw name="Dado que eu esteja no sistema do exercicio de automação" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-11T12:00:38.437183" level="INFO">Opening browser 'Chrome' to base url 'https://automationexercise.com/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-11T12:00:38.435831" elapsed="7.324277"/>
+</kw>
+<status status="PASS" start="2024-07-11T12:00:38.434531" elapsed="7.325577"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-11T12:00:45.769270" level="INFO">${random_first_name} = Jane</msg>
+<var>${random_first_name}</var>
+<arg>random.choice($first_names)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-11T12:00:45.761325" elapsed="0.007945"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-11T12:00:45.771643" level="INFO">${random_second_name} = Lima</msg>
+<var>${random_second_name}</var>
+<arg>random.choice($second_names)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-11T12:00:45.770293" elapsed="0.002364"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-11T12:00:45.774653" level="INFO">${random_name} = Jane Lima</msg>
+<var>${random_name}</var>
+<arg>"${random_first_name} ${random_second_name}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-11T12:00:45.773656" elapsed="0.002081"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-11T12:00:45.777753" level="INFO">${random_number} = 34</msg>
+<var>${random_number}</var>
+<arg>random.randint(1, 100)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-11T12:00:45.776749" elapsed="0.001004"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-11T12:00:45.779799" level="INFO">${random_domain} = hotmail.com</msg>
+<var>${random_domain}</var>
+<arg>random.choice($email_domains)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-11T12:00:45.778749" elapsed="0.002291"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-11T12:00:45.784419" level="INFO">${random_email} = Jane.34@hotmail.com</msg>
+<var>${random_email}</var>
+<arg>"${random_first_name}.${random_number}@${random_domain}"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-11T12:00:45.782362" elapsed="0.002057"/>
+</kw>
+<kw name="Quando informo o campo Name" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T12:00:45.788420" level="INFO">Typing text 'Jane Lima' into text field '//*[@data-qa="signup-name"]'.</msg>
+<arg>//*[@data-qa="${locator}"]</arg>
+<arg>${texto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T12:00:45.787420" elapsed="0.233037"/>
+</kw>
+<arg>signup-name</arg>
+<arg>${random_name}</arg>
+<status status="PASS" start="2024-07-11T12:00:45.786420" elapsed="0.234037"/>
+</kw>
+<kw name="E informo o campo Email Address" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-11T12:00:46.022758" level="INFO">Typing text 'Jane.34@hotmail.com' into text field '//*[@data-qa="signup-email"]'.</msg>
+<arg>//*[@data-qa="${locator}"]</arg>
+<arg>${texto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T12:00:46.021620" elapsed="0.164635"/>
+</kw>
+<arg>signup-email</arg>
+<arg>${random_email}</arg>
+<status status="PASS" start="2024-07-11T12:00:46.020457" elapsed="0.166307"/>
+</kw>
+<kw name="E clico na opção" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-11T12:00:46.188943" level="INFO">Clicking element '//*[@data-qa="signup-button"]'.</msg>
+<arg>//*[@data-qa="${locator}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-11T12:00:46.188943" elapsed="6.002773"/>
+</kw>
+<arg>signup-button</arg>
+<status status="PASS" start="2024-07-11T12:00:46.187919" elapsed="6.003797"/>
+</kw>
+<kw name="Então o usuário direcionado para a tela de criação de conta" owner="keywords">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-07-11T12:00:52.274639" level="INFO">${current_url} = https://automationexercise.com/signup</msg>
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-07-11T12:00:52.193834" elapsed="0.080805"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${current_url}</arg>
+<arg>https://automationexercise.com/signup</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-07-11T12:00:52.274639" elapsed="0.001080"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//*[@data-qa="days"]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-07-11T12:00:52.275719" elapsed="0.064218"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-07-11T12:00:52.354597" level="INFO">Current page contains element '//*[@data-qa="days"]'.</msg>
+<arg>//*[@data-qa="days"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-07-11T12:00:52.341340" elapsed="0.013257"/>
+</kw>
+<status status="PASS" start="2024-07-11T12:00:52.192724" elapsed="0.161873"/>
+</kw>
+<doc>Realizar cadastro no sistema com sucesso</doc>
+<status status="PASS" start="2024-07-11T12:00:38.433531" elapsed="13.922320"/>
+</test>
+<status status="PASS" start="2024-07-11T12:00:38.061426" elapsed="14.297579"/>
+</suite>
+<status status="PASS" start="2024-07-11T12:00:38.056290" elapsed="14.305033"/>
+</suite>
+<status status="PASS" start="2024-07-11T12:00:38.016118" elapsed="14.350200"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="WEB">WEB</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">WEB.Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Login Test">WEB.Tests.Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
